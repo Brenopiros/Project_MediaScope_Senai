@@ -979,46 +979,93 @@ nav{
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* start of last section */
 
-.fifth_section{
-    max-width:100%;
-    height: 90vh;
-    margin-top: 5vh;
-}
-.fifth_section_container{
-    display: flex;
+/* ====== SEÇÃO PRINCIPAL ====== */
+
+.fifth_section {
+    width: 100%;
+    padding: 5vh 0;
+
 }
 
-.nine_space{
+/* ====== CONTAINER FLEX ====== */
+
+.fifth_section_container {
     display: flex;
-    justify-content: center;  /* Centraliza a imagem horizontalmente */
+    justify-content: center;
     align-items: center;
-    width: 40%;
-    height: 90vh;
+    gap: 5vh;
 }
 
-.fifth_section_img img{
-    width: 620px;
+/* ====== BLOCO DA IMAGEM ====== */
+
+.nine_space {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.fifth_section_img img {
+    width: 100%;
+    width: 580px;
     height: auto;
+
 }
 
-.ten_space{
-    width: 60%;
-    height: 90vh;
-    padding: 0 0 0 5vh;
+/* ====== BLOCO DO TEXTO ====== */
+
+.ten_space {
+    width: 55%;
+    padding-left: 5vh;
+
 }
 
-.title_ten_space{
-    font-size: 34px;
+/* TÍTULO */
+
+.title_ten_space h2 {
+    font-size: 32px;
     font-weight: 800;
-    font-style: bold;
     color: var(--primary_color);
+    line-height: 1.2;
 }
 
-.paragrafan_ten_space{
-    font-size: 28px;
+/* PARÁGRAFOS */
+
+.paragrafan_ten_space p {
+    font-size: 22px;
     font-weight: 600;
+    line-height: 1.5;
+    color: var(--text_color, #333); /* fallback caso a variável não exista */
+    margin-top: 2vh;
 }
 
+/* ====== RESPONSIVIDADE ====== */
+
+@media (max-width: 900px) {
+    .fifth_section_container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nine_space,
+    .ten_space {
+        width: 100%;
+        padding: 0;
+    }
+
+    .title_ten_space h2 {
+        font-size: 28px;
+    }
+
+    .paragrafan_ten_space p {
+        font-size: 18px;
+    }
+
+    .fifth_section_img img {
+        max-width: 380px;
+    }
+}
 
 
 /* end of last section */
