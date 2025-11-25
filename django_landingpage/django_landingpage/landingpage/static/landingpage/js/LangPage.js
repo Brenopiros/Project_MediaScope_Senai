@@ -141,3 +141,63 @@ planos.forEach((plano) => {
 });
 // end part of plans of upgrade
 ///////////////////////////////////////////////////////////////////////////////////////////
+// start of review section
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = Array.from(document.querySelectorAll('.review_card'));
+  const COLLAPSED_MAX = 180; // valor em px coerente com CSS (max-height inicial)
+
+  cards.forEach(card => {
+    const shortEl = card.querySelector('.review_text.short');
+    const fullEl = card.querySelector('.review_text.full');
+
+    // garantir que full começa com maxHeight 0 (conforme CSS)
+    fullEl.style.maxHeight = '0px';
+
+    // clique no card abre/fecha com altura dinâmica
+    card.addEventListener('click', (e) => {
+      const isOpen = card.classList.contains('open');
+
+      if (isOpen) {
+        // FECHAR: animar full para 0 e card para COLLAPSED_MAX
+        fullEl.style.maxHeight = '0px';
+        // pequena espera para permitir transição do full (opcional)
+        // reduzir card maxHeight para o valor do preview
+        card.style.maxHeight = COLLAPSED_MAX + 'px';
+        card.classList.remove('open');
+      } else {
+        // ABRIR:
+        // marque como open (ativa sombras, oculta short via CSS)
+        card.classList.add('open');
+
+        // calcular altura necessária para o full conteúdo:
+        // para medir corretamente, precisamos do conteúdo real. uma técnica:
+        // 1) permitir que full tenha maxHeight 'none' temporariamente para medir scrollHeight
+        fullEl.style.maxHeight = 'none';
+        const fullScroll = fullEl.scrollHeight;
+
+        // 2) resetar para 0 para que transição ocorra; em seguida setar para medida
+        fullEl.style.maxHeight = '0px';
+
+        // forçar reflow para garantir a transição (ler offsetHeight)
+        // eslint-disable-next-line no-unused-vars
+        const reflow = fullEl.offsetHeight;
+
+        // definir a altura final do card = altura atual do card (fechado) + fullScroll + margem
+        // medimos card's scrollHeight quando short ainda visível para ter valor inicial
+        const initialCardHeight = COLLAPSED_MAX;
+        const extra = fullScroll + 12; // margem segura
+        const finalCardMax = initialCardHeight + extra;
+
+        // aplicar valores com pequeno timeout para ativar transição
+        requestAnimationFrame(() => {
+          fullEl.style.maxHeight = fullScroll + "px";
+          card.style.maxHeight = finalCardMax + "px";
+        });
+      }
+    });
+  });
+});
+
+
+// end of review section
+///////////////////////////////////////////////////////////////////////////////////////////
