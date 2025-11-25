@@ -1501,3 +1501,205 @@ nav{
         max-width: 380px;
     }
 }
+/* /////////////////////////////////////////////////////////////////////////////////////////// */
+/* start of footer  */
+/* =========================================
+   ESTRUTURA DO FOOTER
+   ========================================= */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+}
+
+/* Imagem de Fundo */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Certifique-se de que o caminho da imagem está correto */
+    background-image: url('../images/footer.jpeg'); 
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   SEÇÃO DE LINKS
+   ========================================= */
+.info-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.links-container {
+    display: flex;
+    gap: 80px;
+}
+
+.links-column {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-column li {
+    margin-bottom: 8px;
+}
+
+.links-column a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.links-column a:hover {
+    color: #9933ff;
+}
+
+/* =========================================
+   SEÇÃO DE REDES SOCIAIS E CONTATO
+   ========================================= */
+.contact-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.social-icon:hover {
+    opacity: 0.8;
+}
+
+/* --- CORES ESPECÍFICAS DOS ÍCONES --- */
+
+/* Cor Primária: #9933ff */
+
+.social-icon.youtube { background-color: transparent; }
+.social-icon.youtube i { color: #9933ff !important; font-size: 24px; }
+
+.social-icon.facebook { background-color: #9933ff; color: #ffffff; font-size: 24px; }
+
+.social-icon.x-twitter { background-color: transparent; }
+.social-icon.x-twitter i { color: #9933ff !important; font-size: 24px; }
+
+.social-icon.instagram { background-color: transparent; }
+.social-icon.instagram i { color: #9933ff !important; font-size: 24px; }
+
+.social-icon.linkedin {
+    background-color: #9933ff;
+    border-radius: 0 !important;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+/* Informações de Contato */
+.contact-info p {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #fff;
+    font-size: 18px;
+}
+
+/* =========================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================= */
+
+/* Tablets e Telas Médias (max-width: 900px) */
+@media (max-width: 900px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .info-links, .contact-social {
+        align-items: center;
+        width: 100%;
+    }
+
+    .contact-social {
+        margin-top: 40px;
+    }
+
+    .links-container {
+        justify-content: center;
+    }
+
+    .contact-info p {
+        justify-content: center;
+    }
+}
+
+/* Celulares (max-width: 480px) */
+@media (max-width: 480px) {
+    .links-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-section h2 {
+        font-size: 20px;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+}
+
+/* end of footer  */
