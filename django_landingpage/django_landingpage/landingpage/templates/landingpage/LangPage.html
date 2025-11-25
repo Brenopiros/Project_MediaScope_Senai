@@ -34,15 +34,32 @@
 <!-- start of home  -->
 <section class="home">
     <div class="container_home">
-        <div class="first_home_space">
+        <div class="text_space">
             <div class="content_home">
                 <h2>Inteligência em redes <br>sociais para decisões <br>estratégicas</h2>
-                <a class="Experiment_now" href="#"><button> Experimente já!</button></a>
+                <a class="Experiment_now" href="#"><button>Experimente já!</button></a>
             </div>
         </div>
-        <div class="second_home_space"></div>
-    </div>
 
+        <div class="graphic_space">
+            <div class="dashboard-preview">
+                <div class="card-bar-chart">
+                    <div class="chart-title">Social media followers (30 days)</div>
+                    <div class="bars-container">
+                        <div class="bar" style="height: 45%;"></div>
+                        <div class="bar" style="height: 65%;"></div>
+                        <div class="bar" style="height: 90%;"></div>
+                        <div class="bar" style="height: 75%;"></div>
+                        <div class="bar" style="height: 55%;"></div>
+                        <div class="bar" style="height: 85%;"></div>
+                        <div class="bar active" style="height: 100%;"></div>
+                    </div>
+                </div>
+                
+                <div class="card-pie-chart"></div>
+            </div>
+        </div>
+    </div>
 </section>
 
 
@@ -76,7 +93,9 @@
             <h2>Funcionalidades desenhadas para <br>seu sucesso!</h2>
         </div>
         <div class="second_section_container">
-            <div class="three_space"></div>
+            <div class="three_space">
+                <img src="{% static 'landingpage/images/grafico-3.jpg' %}" alt="">
+            </div>
             <div class="four_space">
                 <div class="box_information_second_section">
                     <h1>Monitoramento em Tempo Real</h1>
@@ -100,7 +119,7 @@
                     <a class="learn_more" href="#"><button>Saiba mais</button></a>
                 </div></div>
             <div class="six_space">
-                
+                <img src="{% static 'landingpage/images/grafico-4.jpg' %}" alt="">
             </div>
         </div>
     </section>
@@ -247,17 +266,87 @@
 <!-- end part of plans of upgrades -->
 <!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- start of review section -->
-<section class="review_section">
-    <div class="review_section_container">
+<section class="reviews_section" style="background-color: var(--secondery_color_background);">
+  <div class="reviews_container">
+
     <div class="tittle_review_section">
-        <h2>Veja os resultados de nossos clientes</h2>
+      <h2>Veja os resultados de nossos clientes</h2>
     </div>
-    <div class="box_reviews">
-        <div class="review_1"></div>
-        <div class="review_2"></div>
-        <div class="review_3"></div>
+
+    <!-- REVIEW 1 -->
+    <div class="review_card">
+      <div class="review_header">
+        <!-- exemplo usando sua imagem enviada localmente -->
+        <img src="" class="review_img" alt="user1">
+        <div>
+          <h3>John D.</h3>
+          <p class="job">Company CEO</p>
+        </div>
+      </div>
+
+      <div class="review_stars" aria-hidden="true">★★★★★</div>
+
+      <p class="review_text short">
+        I've been consistently impressed with the quality of service provided by this website. They have exceeded my expectations and delivered exceptional results...
+      </p>
+
+      <div class="review_text full">
+        <p>
+          I've been consistently impressed with the quality of service provided by this website. They have exceeded my expectations and delivered exceptional results.
+          The team is extremely professional and fast. Highly recommended!
+        </p>
+      </div>
     </div>
+
+    <!-- REVIEW 2 -->
+    <div class="review_card">
+      <div class="review_header">
+        <img src="" class="review_img" alt="user2">
+        <div>
+          <h3>Maria S.</h3>
+          <p class="job">Marketing Manager</p>
+        </div>
+      </div>
+
+      <div class="review_stars" aria-hidden="true">★★★★☆</div>
+
+      <p class="review_text short">
+        The platform helped our company streamline processes and grow our results...
+      </p>
+
+      <div class="review_text full">
+        <p>
+          The platform helped our company streamline processes and grow our results. 
+          The support team is fantastic, fast, and very committed to solving any issue. Amazing!
+        </p>
+      </div>
     </div>
+
+    <!-- REVIEW 3 -->
+    <div class="review_card">
+      <div class="review_header">
+        <img src="" class="review_img" alt="user3">
+        <div>
+          <h3>Lucas R.</h3>
+          <p class="job">Entrepreneur</p>
+        </div>
+      </div>
+
+      <div class="review_stars" aria-hidden="true">★★★★★</div>
+
+      <p class="review_text short">
+        Excellent experience! Completely improved our efficiency and workflow...
+      </p>
+
+      <div class="review_text full">
+        <p>
+          Excellent experience! Completely improved our efficiency and workflow. The team is highly dedicated, 
+          knowledgeable, and extremely organized. I would 100% recommend!
+        </p>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 
